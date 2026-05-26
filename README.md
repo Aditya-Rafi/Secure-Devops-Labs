@@ -1,2 +1,2 @@
 # Secure-Devops-Labs
-Centralized DevSecOps, Kubernetes, GitOps, Security Monitoring, and Infrastructure Automation Lab Portfolio.
+Secure DevOps Lab is a centralized portfolio repository showcasing enterprise-style DevSecOps infrastructure, cloud-native platforms, security monitoring, GitOps workflows, infrastructure automation, and observability implementations.
