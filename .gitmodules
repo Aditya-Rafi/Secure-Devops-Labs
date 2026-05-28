@@ -1,0 +1,3 @@
+[submodule "components/lab-bootstrap"]
+	path = components/lab-bootstrap
+	url = https://github.com/Aditya-Rafi/Lab-Bootstarp.git
