@@ -1,3 +1,6 @@
 [submodule "components/lab-bootstrap"]
 	path = components/lab-bootstrap
 	url = https://github.com/Aditya-Rafi/Lab-Bootstarp.git
+[submodule "components/Lab-DevopsApp"]
+	path = components/Lab-DevopsApp
+	url = https://github.com/Aditya-Rafi/Lab-DevopsApp.git
