@@ -1,95 +1,30 @@
-# Secure-Devops-Labs
-Secure DevOps Lab is a centralized portfolio repository showcasing enterprise-style DevSecOps infrastructure, cloud-native platforms, security monitoring, GitOps workflows, infrastructure automation, and observability implementations.
+# Secure DevOps Labs
 
-## Overview
+Index repository for my hands-on DevOps / DevSecOps labs. It links two smaller labs as
+**git submodules** so they can be cloned together; every other project lives in its own
+repository (listed below).
 
-Secure DevOps Lab is a centralized portfolio repository that demonstrates modern DevSecOps practices, cloud-native infrastructure management, security monitoring, observability, GitOps workflows, and infrastructure automation.
+## Included as Submodules
 
-This project is designed as a hands-on enterprise lab environment for learning, experimentation, and showcasing real-world platform engineering and security operations capabilities.
+| Path | Repository | What it covers |
+| --- | --- | --- |
+| [`components/lab-bootstrap`](components/lab-bootstrap) | [linux-hardening-baseline](https://github.com/Aditya-Rafi/linux-hardening-baseline) | Secure Ubuntu/Debian baseline: idempotent user provisioning, SSH key-only access, `ufw` firewall, config backup with SHA256 checksums and retention, post-deploy validation script |
+| [`components/Lab-DevopsApp`](components/Lab-DevopsApp) | [fastapi-devops-lab](https://github.com/Aditya-Rafi/fastapi-devops-lab) | FastAPI service behind Nginx with PostgreSQL and Redis: multi-stage non-root image, Docker Compose, unit and integration tests, Ruff, GitHub Actions CI/CD, Trivy scan, Dependabot |
 
----
+## Related Projects
 
-## Objectives
+| Repository | Focus |
+| --- | --- |
+| [devsecops-cicd-pipeline](https://github.com/Aditya-Rafi/devsecops-cicd-pipeline) | GitHub Actions pipeline with Gitleaks, Semgrep, Trivy and semantic-versioned releases to GHCR |
+| [wazuh-threat-mitigation](https://github.com/Aditya-Rafi/wazuh-threat-mitigation) | Wazuh + Suricata detection with custom rules and automated active response |
+| [observability-stack](https://github.com/Aditya-Rafi/observability-stack) | Grafana, Alloy, Mimir, Loki, Tempo and Blackbox monitoring with Telegram alerting |
+| [ansible-mysql-backup-teleport](https://github.com/Aditya-Rafi/ansible-mysql-backup-teleport) | Ansible MySQL backup/restore over Teleport, run from Semaphore |
 
-- Build a secure cloud-native infrastructure
-- Implement DevSecOps workflows
-- Deploy Kubernetes-based platforms
-- Integrate security monitoring and threat detection
-- Automate infrastructure provisioning
-- Practice GitOps deployment strategies
-- Improve observability and incident response
+## Clone
 
----
+```bash
+git clone --recurse-submodules https://github.com/Aditya-Rafi/Secure-Devops-Labs.git
 
-## Platform Components
-
-| Platform | Description |
-|---|---|
-| platform-security | SIEM, IDS/IPS, endpoint visibility, threat detection |
-| platform-monitoring | Metrics, logging, tracing, alerting |
-| platform-k8s | Kubernetes manifests and cluster operations |
-| platform-gitops | ArgoCD and GitOps delivery workflows |
-| platform-cicd | CI/CD automation and secure pipelines |
-| platform-terraform | Infrastructure as Code |
-| platform-ansible | Configuration management and automation |
-| sample-secure-app | Demo application for testing pipelines and security |
-
----
-
-## Technologies
-
-### Cloud Native
-- Kubernetes
-- Docker
-- Helm
-- ArgoCD
-
-### Security
-- Wazuh
-- Suricata
-- Falco
-- Sigma Rules
-- Trivy
-
-### Monitoring & Observability
-- Prometheus
-- Grafana
-- Loki
-- Tempo
-- OpenTelemetry
-
-### Infrastructure Automation
-- Terraform
-- Ansible
-
-### CI/CD
-- GitHub Actions
-- GitLab CI
-- Jenkins
-
----
-
-## Architecture
-
-```text
-Developer
-   │
-   ▼
-Git Repository
-   │
-   ▼
-CI/CD Pipeline
-   │
-   ▼
-Container Registry
-   │
-   ▼
-GitOps Deployment
-   │
-   ▼
-Kubernetes Cluster
-   │
-   ├── Monitoring Stack
-   ├── Security Stack
-   ├── Applications
-   └── Logging Stack
+# already cloned without submodules?
+git submodule update --init --recursive
+```
